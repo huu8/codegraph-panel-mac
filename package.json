@@ -6,9 +6,9 @@
   "author": "huzijing",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huzijing/codegraph-panel-mac.git"
+    "url": "git+https://github.com/huu8/codegraph-panel-mac.git"
   },
-  "homepage": "https://github.com/huzijing/codegraph-panel-mac",
+  "homepage": "https://github.com/huu8/codegraph-panel-mac",
   "main": "lib/index.js",
   "engines": {
     "dsh": ">=0.2.0-rc.1",
@@ -60,5 +60,8 @@
     "ui",
     "macos"
   ],
-  "license": "MIT"
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/huu8/codegraph-panel-mac/issues"
+  }
 }
