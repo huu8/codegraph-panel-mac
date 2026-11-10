@@ -1,0 +1,64 @@
+{
+  "name": "codegraph-panel-mac",
+  "version": "0.1.0",
+  "description": "CodeGraph 认知面板（macOS 版）：CodeGraph 官方没有 UI（codegraph ui 仍提示后续版本提供），本插件在 DSH 会话标签栏补一个 CodeGraph 标签。功能包括索引概览（文件/节点/边/体积/语言/待同步）、符号搜索（按名与类型）、调用关系图（cytoscape 交互图，以符号为中心展开 1-3 跳邻域，按 calls/imports/references/instantiates/extends 着色）、影响面分析（谁依赖我，按跳数分组）、符号详情（元数据 + 源码与调用链），以及一键 sync / 重建索引。图数据直接读 .codegraph/codegraph.db 的 nodes/edges 表（CLI 的 impact 只给平铺节点、拿不到连线），只读打开，不写业务代码。",
+  "type": "module",
+  "author": "huzijing",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/huzijing/codegraph-panel-mac.git"
+  },
+  "homepage": "https://github.com/huzijing/codegraph-panel-mac",
+  "main": "lib/index.js",
+  "engines": {
+    "dsh": ">=0.2.0-rc.1",
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "node scripts/build-client.mjs",
+    "check": "node scripts/check.mjs",
+    "test": "node --test test/*.test.mjs",
+    "install:link": "bash scripts/install.sh"
+  },
+  "exports": {
+    ".": {
+      "default": "./lib/index.js"
+    },
+    "./client": "./lib/client.js",
+    "./locale/*.json": "./locale/*.json",
+    "./icon": "./icon.svg",
+    "./package.json": "./package.json"
+  },
+  "files": [
+    "lib/index.js",
+    "lib/client.js",
+    "lib/codegraph.js",
+    "lib/platform.js",
+    "cordis.patch.yml",
+    "locale/*.json",
+    "icon.svg"
+  ],
+  "dsh": {
+    "bundle": {
+      "patch": "./cordis.patch.yml"
+    },
+    "client": {
+      "platform": "web",
+      "inject": [
+        "@deepseek-ai/dsh-client-ui-conversation"
+      ]
+    }
+  },
+  "keywords": [
+    "deepseek-harness",
+    "dsh",
+    "cordis",
+    "plugin",
+    "codegraph",
+    "dependency-graph",
+    "cytoscape",
+    "ui",
+    "macos"
+  ],
+  "license": "MIT"
+}

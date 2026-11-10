@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "CodeGraph Panel",
+    "description": "Adds a CodeGraph tab to the conversation view: index overview, symbol search, interactive call graph (cytoscape), impact analysis, symbol details, and one-click sync / reindex."
+  }
+}

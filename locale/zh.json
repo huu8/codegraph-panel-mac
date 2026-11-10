@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "CodeGraph 认知面板",
+    "description": "在会话标签栏加一个 CodeGraph 标签：索引概览、符号搜索、调用关系图（cytoscape 交互图）、影响面分析、符号详情，以及一键 sync / 重建索引。"
+  }
+}
